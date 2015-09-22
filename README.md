@@ -1,2 +1,2 @@
 # address-bloc
-Basic Ruby application
+Ruby command-line address book
