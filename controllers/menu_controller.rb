@@ -4,8 +4,8 @@ class MenuController
     attr_accessor :address_book
     
     def initialize
-       @address_book = AddressBook.new 
-    end
+       @address_book = AddressBook.n ew 
+    end # End initialize()
     
     def main_menu
        puts "Main Menu - #{@address_book.entries.count} entries"
@@ -42,7 +42,7 @@ class MenuController
           puts "Sorry, this is not a valid input"
           main_menu
        end
-    end
+    end # End main_menu()
     
     def view_all_entries
       @address_book.entries.each do |entry|
@@ -53,7 +53,7 @@ class MenuController
       
       system "clear"
       puts "End of entries"
-    end
+    end # End view_all_entries()
     
     def create_entry
       system "clear"
@@ -70,13 +70,13 @@ class MenuController
       
       system "clear"
       puts "New entry created"
-    end
+    end # End create_entry()
     
     def search_enries
-    end
+    end # End search_entries()
     
     def read_csv
-    end
+    end # End read_csv()
     
     def entry_submenu(entry)
       puts "n - next entry"
@@ -97,6 +97,6 @@ class MenuController
         puts "#{selection} is not valid input"
         entry_submenu(entry)
       end
-    end
+    end # End entry_submenu()
     
-end
+end # End MenuController class

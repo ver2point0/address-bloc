@@ -5,10 +5,10 @@ class Entry
     @name = name
     @phone_number = phone_number
     @email = email
-  end
+  end # End initialize()
   
   def to_s
     "Name: #{@name}\nPhone Number: #{@phone_number}\nEmail: #{@email}"
-  end
+  end # End to_s()
      
 end
