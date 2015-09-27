@@ -8,6 +8,11 @@ class AddressBook
       @entries = []
     end # End initialize()
     
+    def detonate
+      @entries = []
+    end # End detonate()
+    
+    
     def add_entry(name, phone_number, email)
       index = 0
       
