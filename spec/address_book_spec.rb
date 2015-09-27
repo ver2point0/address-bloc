@@ -7,7 +7,7 @@ RSpec.describe AddressBook do
      def check_entry(entry, expected_name, expected_number, expected_email)
       expect(entry.name).to eq(expected_name)
       expect(entry.phone_number).to eq(expected_number)
-      expeect(entry.email).to eq(expected_email)
+      expect(entry.email).to eq(expected_email)
      end # End check_entry()
     
     describe "attributes" do
@@ -84,7 +84,7 @@ RSpec.describe AddressBook do
         check_entry(entry_five, "Sussie", "555-555-2036", "sussie@blocmail.com")
       end
     end # End import_from_csv() context
-    
+  
     # test binary_search method
     describe "#binary_search" do
       it "searches AddressBook for a non-existent entry" do
@@ -134,4 +134,26 @@ RSpec.describe AddressBook do
         expect(entry).to be_nil
       end
     end # End binary_search() context
+    
+    # test iterative_search method
+    describe "#iterative_search" do
+      it "searches AddressBook for a non-existent entry" do 
+        book.import_from_csv("entries.csv")
+        entry = book.iterative_search("Carol")
+        expect(entry).to be_nil
+      end
+      
+      it "searches AddressBook for Bill" do
+        book.import_from_csv("entries.csv")
+        entry = book.iterative_search("Bill")
+        expect(entry).to be_a Entry
+        check_entry(entry, "Bill", "555-555-4854", "bill@blocmail.com")
+      end
+      
+      it "searches AddressBook for Joey" do
+        book.import_from_csv("entries.csv")
+        entry = book.iterative_search("Joey")
+        expect(entry).to be_nil
+      end
+    end
 end # End AdddressBook RSpec
